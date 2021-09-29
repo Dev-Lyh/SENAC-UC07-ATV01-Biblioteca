@@ -24,7 +24,6 @@ D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.MvcApplica
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cache
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.RazorAssemblyInfo.cs
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\staticwebassets\Biblioteca.StaticWebAssets.Manifest.cache
-D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\staticwebassets\Biblioteca.StaticWebAssets.xml
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\scopedcss\bundle\Biblioteca.styles.css
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.TagHelpers.input.cache
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.TagHelpers.output.cache
@@ -51,3 +50,4 @@ D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.Cop
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.dll
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.pdb
 D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.genruntimeconfig.cache
+D:\Projetos\UC_07\ATV01\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
