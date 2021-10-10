@@ -6,26 +6,30 @@ namespace Biblioteca.Controllers
 {
     public class UsuarioController : Controller
     {
-       public  IActionResult ListaDeUsuarios() {
+       public IActionResult ListaDeUsuarios() {
            Autenticacao.CheckLogin(this);
            Autenticacao.VerificaSeUsuarioEAdmin(this);
 
            return View(new UsuarioService().Listar());
        }
 
-       public IActionResult EditarUsuario(int IdUsuario) {
-           Usuario u = new UsuarioService().Listar(IdUsuario);
+       public IActionResult EditarUsuario(int id)
+        {
+            Usuario u = new UsuarioService().Listar(id);
 
-           return View();
-       }
+            return View(u);
 
-       [HttpPost]
-       public IActionResult EditarUsuario(Usuario userEditado) {
-           UsuarioService us = new UsuarioService();
-           us.edit(userEditado);
+        }
 
-           return RedirectToAction("ListaDeUsuarios");
-       }
+        [HttpPost]
+        public IActionResult EditarUsuario(Usuario userEditado)
+        {
+            UsuarioService us = new UsuarioService();
+            us.editarUsuario(userEditado);
+            
+            return RedirectToAction("ListaDeUsuarios");
+
+        }
 
        public IActionResult RegistrarUsuario() {
            Autenticacao.CheckLogin(this);
@@ -47,15 +51,16 @@ namespace Biblioteca.Controllers
            return RedirectToAction("cadastroRealizado");
        }
 
-       public IActionResult ExcluirUsuario(int IdUsuario) {
-           return View(new UsuarioService().Listar(IdUsuario));
+       public IActionResult ExcluirUsuario(int id) {
+           Usuario u = new UsuarioService().Listar(id);
+           return View(u);
        }
 
        [HttpPost]
-       public IActionResult ExcluirUsuario(string decisao, int IdUsuario) {
-           if(decisao == "ECLUIR") {
-               ViewData["Mensagem"] = "Exclusão do usuário" + new UsuarioService().Listar(IdUsuario).NomeUsuario + " realizada com sucesso";
-               new UsuarioService().delete(IdUsuario);
+       public IActionResult ExcluirUsuario(string decisao, int id) {
+           if(decisao == "EXCLUIR") {
+               ViewData["Mensagem"] = "Exclusão do usuário" + new UsuarioService().Listar(id).NomeUsuario + " realizada com sucesso";
+               new UsuarioService().excluirUsuario(id);
                return View("ListaDeUsuarios", new UsuarioService().Listar());
            } else {
                ViewData["Mensagem"] = "Exclusão cancelada";
