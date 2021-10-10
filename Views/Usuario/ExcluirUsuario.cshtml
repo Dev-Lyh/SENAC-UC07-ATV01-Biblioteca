@@ -1,12 +1,39 @@
 @model Usuario
 
-<h1>ATENÇÃO!</h1>
-<h2>Tem certeza que gostaria de excluir o usuário "@Model.NomeUsuario" (@Model.Login)?</h2>
-<p>A exclusão é permanente</p>
+<style>
+  h1 {
+    color: red;
+    font-weight: bold;
+  }
+  p {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+  }
+  section {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  input:nth-child(2) {
+    margin-right: 20px;
+  }
+</style>
 
-<form action="ExcluirUsuario" method="post">
-  <input type="hidden" name="Id" value="@Model.Id">
+<section>
+  <div>
+    <h1 class="display-1 text-center">ATENÇÃO!</h1>
+    <h2 class="text-center">Tem certeza que gostaria de excluir o usuário "@Model.NomeUsuario" (@Model.Login)?</h2>
+    <p class="text-center">A exclusão é permanente</p>
+  </div>
 
-  <input type="submit" name="decisao" value="CANCELAR" class="btn btn-primary">
-  <input type="submit" name="decisao" value="EXCLUIR" class="btn btn-danger">
-</form>
+  <form action="ExcluirUsuario" method="post">
+    <input type="hidden" name="Id" value="@Model.Id">
+
+    <input type="submit" name="decisao" value="CANCELAR" class="btn btn-primary">
+    <input type="submit" name="decisao" value="EXCLUIR" class="btn btn-danger">
+  </form>
+</section>

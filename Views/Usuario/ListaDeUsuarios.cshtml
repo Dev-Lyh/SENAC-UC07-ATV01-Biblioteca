@@ -1,19 +1,20 @@
 @model List<Usuario>
 
-<h1>Usuários cadastrados no sistema</h1>
+<h1 class="text-center">Usuários cadastrados no sistema</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-light">
     <tr>
-      <th scope="row">Nome</th>
-      <th scope="row">Login</th>
-      <th scope="row">Tipo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Login</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
     @foreach (Usuario u in Model)
     {
-      <tr>
+      <tr scope="row">
         <td>@u.NomeUsuario</td>
         <td>@u.Login</td>
 
@@ -23,11 +24,13 @@
           <td>Padrão</td>
         }
 
-        <td><a href="EditarUsuario?Id=@u.Id" class="btn btn-primary">EDITAR</a></td>
-        <td><a href="ExcluirUsuario?id=@u.Id" class="btn btn-danger">EXCLUIR</a></td>
+        <td>
+          <a href="EditarUsuario?Id=@u.Id" class="btn btn-primary">EDITAR</a>
+          <a href="ExcluirUsuario?id=@u.Id" class="btn btn-danger">EXCLUIR</a>
+        </td>
       </tr>    
     }
   </tbody>
 </table>
 
-<a href="/Usuario/RegistrarUsuario" class="badge badge-primary">Registrar Novo Usuário</a>
+<a href="/Usuario/RegistrarUsuario" class="btn btn-secondary">Registrar Novo Usuário</a>
