@@ -18,19 +18,19 @@ namespace Biblioteca.Models
         } 
         public void include(Usuario u) {
             using(BibliotecaContext bc = new BibliotecaContext()) {
-                bc.Usuarios.Add(u);
+                bc.Add(u);
                 bc.SaveChanges();
             }
         }
 
-        public void delete(int Id) {
+        public void excluirUsuario(int Id) {
             using(BibliotecaContext bc = new BibliotecaContext()) {
                 bc.Usuarios.Remove(bc.Usuarios.Find(Id));
                 bc.SaveChanges();
             }
         }
 
-        public void edit(Usuario ue) {
+        public void editarUsuario(Usuario ue) {
             using(BibliotecaContext bc = new BibliotecaContext()) {
                 Usuario u =bc.Usuarios.Find(ue.Id);
                 u.NomeUsuario = ue.NomeUsuario;
